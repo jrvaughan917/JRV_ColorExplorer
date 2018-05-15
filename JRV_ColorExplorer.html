@@ -1,0 +1,213 @@
+<!-- 
+	JRV_ColorExplorer by James R. Vaughan
+		
+	Tired of converting RGB to HEX?
+	Tired of using other peoples' colors?
+	Hate using tiny color wheels to find colors?
+	
+	This powerful tool makes finding amazing colors easy!
+	
+	The black background makes the colors really pop!
+	Use the palette to make a color scheme of up to 16 colors!
+	
+	Yes, it has grayness! Rather than draining saturation, you're adding a touch of gray!
+ -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JRV_ColorExplorer</title>
+		<link rel="stylesheet" href="JRV_ColorExplorer_style.css">
+	</head>
+	
+	<body>
+	<table></table>
+		<div id="page-wrap">
+			<table class="ColorTable"></table>
+			
+			</br>
+			
+			<table class="Controls">
+				<tr>
+					<td>
+						<div style="width:80px; display:inline-block; height: 35px; vertical-align: center;">Red</div> <input id="red" style="vertical-align: middle;" class="RedInput slider" type="range" min="0" max="255"></br>
+						<div style="width:80px; display:inline-block; height: 35px; vertical-align: center;">Green</div> <input id="green" style="vertical-align: middle;" class="GreenInput slider" type="range" min="0" max="255"></br>
+						<div style="width:80px; display:inline-block; height: 35px; vertical-align: center;">Blue</div> <input id="blue" style="vertical-align: middle;" class="BlueInput slider" type="range" min="0" max="255"></br>
+						<div style="width:80px; display:inline-block; height: 35px; vertical-align: center;">Lightness</div> <input id="lightness" style="vertical-align: middle;" class="LightnessInput slider" type="range" min="0" max="255"></br>
+						<div style="width:80px; display:inline-block; height: 35px; vertical-align: center;">Grayness</div> <input id="Grayness" style="vertical-align: middle;" class="GraynessInput slider" value="0"type="range" min="0" max="255"></br>
+						<div style="width:80px; display:inline-block; height: 35px; vertical-align: center;">Whiteness</div> <input id="whiteness" style="vertical-align: middle;" class="WhitenessInput slider" type="range" min="0" max="255"></br>
+					</td>
+
+					<td>
+						<table>
+							<tr>
+								<td>
+									<input type="text" class="HexInput"></input>
+									<input type="text" class="RGBInput" readonly></input>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table>
+										<tr>
+											<td>
+												<form onsubmit="return false">
+													<button type="submit" class="ViewRandomColor" style="cursor: pointer;">Random Color</button>
+												</form>
+											</td>
+											<td>
+												<form onsubmit="return false">
+													<button type="submit" class="ResetPage" style="cursor: pointer;">Reset Sliders</button>
+												</form>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div style="padding: 3px;">
+										<table class="PaletteGrid PaletteExport">
+											<tr class="PaletteGrid">
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+											</tr>
+											<tr>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+												<td class="PaletteGrid">
+													<input type="text" class="Palette PaletteSquare" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly></input>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<form onsubmit="return false">
+										<button type="submit" class="ExportButton" style="cursor: pointer;">Export Hex Values</button>
+										<button type="submit" class="AboutButton" style="cursor: pointer;">About</button>
+									</form>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<div style="width:80px; display:inline-block; height: 35px; vertical-align: center;">Hue</div> <input id="whiteness" style="vertical-align: middle; width: 650px;" class="HueInput slider" type="range" value="0" min="0" max="255">
+	    </div>
+		
+		<script src="jquery-3.2.1.min.js"></script>
+		<script src="JRV_ColorExplorer.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- JRV_ColorExplorer by James R. Vaughan, 2018 -->
