@@ -152,6 +152,8 @@ var fullColorHex = function() {
 	var w = WhitenessInput.value;
 	
 	var v = HueInput.value;
+	v = v-128;
+	if (v < 0) {v = 255 + v;}
 	
 	var r = RotateRGB(Red, Green, Blue, v);
 	var g = RotateRGB(Green, Blue, Red, v);
@@ -287,7 +289,7 @@ function ResetControls() {
 	);
 	
 	$( ".HueInput" ).val(
-		0
+		128
 	);
 };
 
