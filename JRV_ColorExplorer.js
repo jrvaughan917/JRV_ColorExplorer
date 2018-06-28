@@ -120,7 +120,8 @@ function DisplayRandomColor() {
 var rgbToHex = function (rgb,l,g,w) {
   
   // Grayness
-  var GraynessRatio = g/255;
+  g = g - 127;
+  var GraynessRatio = g/128;
   var perfectGray = (parseInt(RedInput.value) + parseInt(GreenInput.value) + parseInt(BlueInput.value))/3;
   rgb = rgb*(1-GraynessRatio) + perfectGray*(GraynessRatio); 
   
@@ -281,7 +282,7 @@ function ResetControls() {
 	);
 	
 	$( ".GraynessInput" ).val(
-		0
+		128
 	);
 	
 	$( ".WhitenessInput" ).val(
